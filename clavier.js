@@ -32,6 +32,11 @@ for (let i = 0; i < ligne1.length; i++) {
 			this.style.top = "5px";
 				}
 
+	function unpress(){
+			this.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #156785, 8px 7px 7px grey";
+			this.style.top = '0px';
+	}
+
 	let li = document.createElement('li');
 	li.textContent = ligne1[i].position1 + ligne1[i].position2 + ligne1[i].position3;
 	li.style.display = "inline";
@@ -47,7 +52,8 @@ for (let i = 0; i < ligne1.length; i++) {
   	li.style.borderRadius = "5px";
   	li.style.color = "#808080";
 
-  	li.addEventListener('click', press);
+  	li.addEventListener('mousedown', press);
+  	li.addEventListener('mouseup', unpress);
 
  output.appendChild(li);
 
