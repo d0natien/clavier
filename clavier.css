@@ -1,3 +1,25 @@
+#bloc_page{
+	width: 80%;
+	margin: auto;
+}
+#ecran{
+	padding-top: 200px;
+	height: 40%;
+	background-color: green;
+	border: 3px solid black;
+	
+
+}
 #clavier{
-  margin-top: 10%;
+	position: relative;
+	top: 150px;
+  height: 20%;
+  margin-top: 20px;
+  border: 6px solid grey;
+  padding-right: 2px;
+  padding-left: 2px;
+  background-color: grey;
+}
+#ligne2{
+	margin-top: 28px;
 }
