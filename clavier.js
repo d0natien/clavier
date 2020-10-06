@@ -1,7 +1,7 @@
 
-const output1 = document.querySelector('#ligne1');
-const output2 = document.querySelector('#ligne2');
-const output3 = document.querySelector('#ligne3');
+const output = document.querySelector('ul');
+/*const output2 = document.querySelector('#ligne2');
+const output3 = document.querySelector('#ligne3');*/
 
 function Touche(position1, position2, position3) {
 
@@ -68,7 +68,7 @@ let tl = new Touche('L', '', '');
 let tm = new Touche('M', '', '');
 let tpercent = new Touche('%', 'ù', '');
 let tenter = new Touche('Enter', '', '');
-let tsihft1 = new Touche('Shift', '', '');
+let tshift1 = new Touche('Shift', '', '');
 let tw = new Touche('W', '', '');
 let tx = new Touche('X', '', '');
 let tc = new Touche('C', '', '');
@@ -92,10 +92,14 @@ let tup = new Touche('up', '', '');
 let tdown = new Touche('down', '', '');
 let tright = new Touche('right', '', '');
 
-let ligne1 = [tesc, tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10, tf11, tf12, tdel];
-let ligne2 = [tsquare, tone, ttwo, tthree, tfour, tfive, tsix, tseven, teight, tnine, tzero, tdegre, tplus, tremv];
-let ligne3 = [ttab, ta, tz, te, tr, tt, ty, tu, ti, to, tp, ttrema, tdollar, tarrow];
+let lignes = [[tesc, tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10, tf11, tf12, tdel],
+			[tsquare, tone, ttwo, tthree, tfour, tfive, tsix, tseven, teight, tnine, tzero, tdegre, tplus, tremv],
+			[ttab, ta, tz, te, tr, tt, ty, tu, ti, to, tp, ttrema, tdollar, tarrow],
+			[tmaj, tq, ts, td, tf, tg, th, tj, tk, tl, tm, tpercent, tenter], 
+			[tshift1, tw, tx, tc, tv, tb, tn, task, tdot, tslash, texclam, tshift2], 
+			[tfn, tctrl1, talt, twindows, tspace, taltgr, tctrl2, tleft, tup, tdown, tright]];
 
+console.log(lignes.length);
 
 	function press(){
 			this.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 1px 0px 1px #fff";
@@ -109,130 +113,47 @@ let ligne3 = [ttab, ta, tz, te, tr, tt, ty, tu, ti, to, tp, ttrema, tdollar, tar
 	}
 
 
-// POUR LA LIGNE 1
+for (let i = 0; i < lignes.length; i++) {
 
-for (let i = 0; i < ligne1.length; i++) {
-
-	let li1 = document.createElement('li');
-
-if (ligne1[i].position1) {
-	li1.textContent = ligne1[i].position1;
-	li1.style.textAlign = "left";
-	li1.style.display = "inline";
-	li1.style.listStyleType = "none";
-  	li1.style.width = "80px";
- 	li1.style.border = "1px solid black";
-  	li1.style.padding = "10px";
-  	li1.style.margin = "2px";
-  	li1.style.textAlign = "center";
-  	li1.style.fontWeight = "bold";
-  	li1.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #fff";
-  	li1.style.borderRadius = "5px";
-  	li1.style.color = "#808080";
-  	li1.style.backgroundColor = "#fff";
-
-  	li1.addEventListener('mousedown', press);
-  	li1.addEventListener('mouseup', unpress);
-  	li1.addEventListener('mouseout', unpress);
-output1.appendChild(li1);
-
-}
+	for (let j = 0; j < lignes[i].length; j++) {
+		console.log(lignes[i][j]);
 
 
-if (ligne1[i].position2) {
+		let li = document.createElement('li');
 
-let span = document.createElement('span');
-span.innerHTML = ligne1[i].position2;
-console.log(span);
-li1.append(span);
-	
-	span.textContent = ' ' + ligne1[i].position2;
-	span.style.color = 'red';
-}
-};
+		if (lignes[i][j].position1) {
+			li.textContent = lignes[i][j].position1;
+			li.style.textAlign = "left";
+			li.style.display = "inline";
+			li.style.listStyleType = "none";
+		  	li.style.width = "80px";
+		 	li.style.border = "1px solid black";
+		  	li.style.padding = "10px";
+		  	li.style.margin = "2px";
+		  	li.style.textAlign = "center";
+		  	li.style.fontWeight = "bold";
+		  	li.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #fff";
+		  	li.style.borderRadius = "5px";
+		  	li.style.color = "#808080";
+		  	li.style.backgroundColor = "#fff";
 
+		  	li.addEventListener('mousedown', press);
+		  	li.addEventListener('mouseup', unpress);
+		  	li.addEventListener('mouseout', unpress);
+		output.appendChild(li);
+		}
 
+		if (lignes[i][j].position2) {
 
-// POUR LA LIGNE 2
-for (let i = 0; i < ligne2.length; i++) {
+		let span = document.createElement('span');
+		span.innerHTML = lignes[i][j].position2;
+		console.log(span);
+		li.append(span);
+			
+			span.textContent = ' ' + lignes[i][j].position2;
+			span.style.color = 'red';
+		}
 
-	let li2 = document.createElement('li');
-
-if (ligne2[i].position1) {
-	li2.textContent = ligne2[i].position1;
-	li2.style.textJustify = "inter-word";
-	li2.style.display = "inline";
-	li2.style.listStyleType = "none";
-  	li2.style.width = "80px";
- 	li2.style.border = "1px solid black";
-  	li2.style.padding = "10px";
-  	li2.style.margin = "2px";
-  	li2.style.textAlign = "center";
-  	li2.style.fontWeight = "bold";
-  	li2.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #fff";
-  	li2.style.borderRadius = "5px";
-  	li2.style.color = "#808080";
-  	li2.style.backgroundColor = "#fff";
-
-  	li2.addEventListener('mousedown', press);
-  	li2.addEventListener('mouseup', unpress);
-  	li2.addEventListener('mouseout', unpress);
-output2.appendChild(li2);
+	}
 
 }
-
-
-if (ligne2[i].position2) {
-
-let span = document.createElement('span');
-span.innerHTML = ligne2[i].position2;
-console.log(span);
-li2.append(span);
-	
-	span.textContent = ' ' + ligne2[i].position2;
-	span.style.color = 'red';
-}
-};
-
-
-// POUR LA LIGNE 3
-
-for (let i = 0; i < ligne3.length; i++) {
-
-	let li3 = document.createElement('li');
-
-if (ligne3[i].position1) {
-	li3.textContent = ligne3[i].position1;
-	li3.style.textJustify = "inter-word";
-	li3.style.display = "inline";
-	li3.style.listStyleType = "none";
-  	li3.style.width = "80px";
- 	li3.style.border = "1px solid black";
-  	li3.style.padding = "10px";
-  	li3.style.margin = "2px";
-  	li3.style.textAlign = "center";
-  	li3.style.fontWeight = "bold";
-  	li3.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #fff";
-  	li3.style.borderRadius = "5px";
-  	li3.style.color = "#808080";
-  	li3.style.backgroundColor = "#fff";
-
-  	li3.addEventListener('mousedown', press);
-  	li3.addEventListener('mouseup', unpress);
-  	li3.addEventListener('mouseout', unpress);
-output3.appendChild(li3);
-
-}
-
-
-if (ligne3[i].position2) {
-
-let span = document.createElement('span');
-span.innerHTML = ligne3[i].position2;
-console.log(span);
-li3.append(span);
-	
-	span.textContent = ' ' + ligne3[i].position2;
-	span.style.color = 'red';
-}
-};
