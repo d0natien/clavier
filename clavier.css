@@ -1,6 +1,10 @@
+body{
+	background-color: black;
+}
 #bloc_page{
 	width: 80%;
 	margin: auto;
+	background-color: black;
 }
 #ecran{
 	padding-top: 200px;
@@ -15,12 +19,17 @@
 	top: 150px;
   height: 20%;
   margin-top: 20px;
-  border: 6px solid grey;
+  border: 1px solid grey;
   padding-right: 2px;
   padding-left: 2px;
   background-color: grey;
+  box-shadow: inset 0px 5px 13px white;
+  border-radius: 0px 0px 10px 10px;
 }
 #ligne2{
+	margin-top: 28px;
+}
+#ligne3{
 	margin-top: 28px;
 }
 
