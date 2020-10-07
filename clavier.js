@@ -86,7 +86,7 @@ let tctrl1 = new Touche('Ctrl', '', '', 'tctrl1');
 let talt = new Touche('Alt', '', '', 'talt');
 let twindows = new Touche('Win', '', '', 'twindows');
 let tspace = new Touche('space', '', '', 'tspace');
-let taltgr = new Touche('Alt', 'gr', '', 'taltgr');
+let taltgr = new Touche('Alt', 'g', '', 'taltgr');
 let tctrl2 = new Touche('Ctrl', '', '', 'tctrl2');
 let tleft = new Touche('left', '', '', 'tleft');
 let tup = new Touche('up', '', '', 'tup');
@@ -121,12 +121,13 @@ for (let i = 0; i < lignes.length; i++) {
 		output.append(ul);
 
 	for (let j = 0; j < lignes[i].length; j++) {
-		console.log(lignes[i][j]);
+		console.log(lignes[0][j]);
 
 
 	
 
 		let li = document.createElement('li');
+		ul.appendChild(li);
 		
 		
 
@@ -140,16 +141,33 @@ for (let i = 0; i < lignes.length; i++) {
 			li.style.width = "40px";
 		}
 
+	if (lignes[i][j].name === 'tesc' || lignes[i][j].name === 'tf1' || lignes[i][j].name === 'tf2' || lignes[i][j].name === 'tf3' 
+		|| lignes[i][j].name === 'tf4' || lignes[i][j].name === 'tf5' || lignes[i][j].name === 'tf6' || lignes[i][j].name === 'tf7'
+		|| lignes[i][j].name === 'tf8' || lignes[i][j].name === 'tf9' || lignes[i][j].name === 'tf10' || lignes[i][j].name === 'tf11'
+		|| lignes[i][j].name === 'tf12' || lignes[i][j].name === 'tdel') {
+		li.style.height = '5px';
+		li.style.textAlign = 'left';
+	}else{
+		li.style.height = '20px';
+		li.style.textAlign = 'center';
+	}
+
+	if (lignes[0][j] === 'tsquare') {
+		li.style.padding = '0px';
+	}else{
+		li.style.padding = '10px';
+	}
+
 			// console.log(li.id);
 			li.textContent = lignes[i][j].position1;
-			li.style.textAlign = "left";
+			// li.style.textAlign = "left";
 			li.style.display = "inline-block";
 			li.style.listStyleType = "none";
 		  	
 		  	
 		
 		 	li.style.border = "1px solid black";
-		  	li.style.padding = "10px";
+		  	// li.style.padding = "10px";
 		  	li.style.margin = "2px";
 		  	li.style.textAlign = "center";
 		  	li.style.fontWeight = "bold";
@@ -161,13 +179,12 @@ for (let i = 0; i < lignes.length; i++) {
 		  	li.addEventListener('mousedown', press);
 		  	li.addEventListener('mouseup', unpress);
 		  	li.addEventListener('mouseout', unpress);
-		ul.appendChild(li);
 		}
 
 		if (lignes[i][j].position2) {
 
 		let span = document.createElement('span');
-		span.innerHTML = lignes[i][j].position2;
+		// span.innerHTML = lignes[i][j].position2;
 		console.log(span);
 		li.append(span);
 			
