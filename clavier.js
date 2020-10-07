@@ -3,94 +3,95 @@ const output = document.querySelector('#sortie');
 /*const output2 = document.querySelector('#ligne2');
 const output3 = document.querySelector('#ligne3');*/
 
-function Touche(position1, position2, position3) {
+function Touche(position1, position2, position3, name) {
 
   this.position1 = position1;
   this.position2 = position2;
   this.position3 = position3;
+  this.name = name;
 
 };
 
 
 
-let tesc = new Touche('Esc', '', '');
-let tf1 = new Touche('F1', '', '');
-let tf2 = new Touche('F2', '', '');
-let tf3 = new Touche('F3', '', '');
-let tf4 = new Touche('F4', '', '');
-let tf5 = new Touche('F5', '', '');
-let tf6 = new Touche('F6', '', '');
-let tf7 = new Touche('F7', '', '');
-let tf8 = new Touche('F8', '', '');
-let tf9 = new Touche('F9', '', '');
-let tf10 = new Touche('F10', '', '');
-let tf11 = new Touche('F11', '', '');
-let tf12 = new Touche('F12', '', '');
-let tdel = new Touche('Del', '', '');
-let tsquare = new Touche('2', '', '');
-let tone = new Touche('1', '&', '');
-let ttwo = new Touche('2', 'é', '~');
-let tthree = new Touche('3', '"', '#');
-let tfour = new Touche('4', "'", '#');
-let tfive = new Touche('5', '(', '[');
-let tsix = new Touche('6', '-', '|');
-let tseven = new Touche('7', 'è', '`');
-let teight = new Touche('8', '_', '');
-let tnine = new Touche('9', 'ç', '^');
-let tzero = new Touche('0', 'à', '@');
-let tdegre = new Touche('°', ')', ']');
-let tplus = new Touche('+', '=', '}');
-let tremv = new Touche('remv', '', '');
-let ttab = new Touche('Tab', '', '');
-let ta = new Touche('A', '', '');
-let tz = new Touche('Z', '', '');
-let te = new Touche('E', '€', '');
-let tr = new Touche('R', '', '');
-let tt = new Touche('T', '', '');
-let ty = new Touche('Y', '', '');
-let tu = new Touche('U', '', '');
-let ti = new Touche('I', '', '');
-let to = new Touche('O', '', '');
-let tp = new Touche('P', '', '');
-let ttrema = new Touche('¨', '^', '');
-let tdollar = new Touche('£', '$', '');
-let tarrow = new Touche('>', '<', '');
-let tmaj = new Touche('Maj', '', '');
-let tq = new Touche('Q', '', '');
-let ts = new Touche('S', '', '');
-let td = new Touche('D', '', '');
-let tf = new Touche('F', '', '');
-let tg = new Touche('G', '', '');
-let th = new Touche('H', '', '');
-let tj = new Touche('J', '', '');
-let tk = new Touche('K', '', '');
-let tl = new Touche('L', '', '');
-let tm = new Touche('M', '', '');
-let tpercent = new Touche('%', 'ù', '');
-let tenter = new Touche('Enter', '', '');
-let tshift1 = new Touche('Shift', '', '');
-let tw = new Touche('W', '', '');
-let tx = new Touche('X', '', '');
-let tc = new Touche('C', '', '');
-let tv = new Touche('V', '', '');
-let tb = new Touche('B', '', '');
-let tn = new Touche('N', '', '');
-let task = new Touche(',', '?', '');
-let tdot = new Touche(';', '.', '');
-let tslash = new Touche(':', '/', '');
-let texclam = new Touche('!', '§', '');
-let tshift2 = new Touche('Shift', '', '');
-let tfn = new Touche('fn', '', '');
-let tctrl1 = new Touche('Ctrl', '', '');
-let talt = new Touche('Alt', '', '');
-let twindows = new Touche('Win', '', '');
-let tspace = new Touche('space', '', '');
-let taltgr = new Touche('Alt', 'gr', '');
-let tctrl2 = new Touche('Ctrl', '', '');
-let tleft = new Touche('left', '', '');
-let tup = new Touche('up', '', '');
-let tdown = new Touche('down', '', '');
-let tright = new Touche('right', '', '');
+let tesc = new Touche('Esc', '', '', 'tesc');
+let tf1 = new Touche('F1', '', '', 'tf1');
+let tf2 = new Touche('F2', '', '', 'tf2');
+let tf3 = new Touche('F3', '', '', 'tf3');
+let tf4 = new Touche('F4', '', '', 'tf4');
+let tf5 = new Touche('F5', '', '', 'tf5');
+let tf6 = new Touche('F6', '', '', 'tf6');
+let tf7 = new Touche('F7', '', '', 'tf7');
+let tf8 = new Touche('F8', '', '', 'tf8');
+let tf9 = new Touche('F9', '', '', 'tf9');
+let tf10 = new Touche('F10', '', '', 'tf10');
+let tf11 = new Touche('F11', '', '', 'tf11');
+let tf12 = new Touche('F12', '', '', 'tf12');
+let tdel = new Touche('Del', '', '', 'tdel');
+let tsquare = new Touche('2', '', '','tsquare');
+let tone = new Touche('1', '&', '','tone');
+let ttwo = new Touche('2', 'é', '~','ttwo');
+let tthree = new Touche('3', '"', '#','tthree');
+let tfour = new Touche('4', "'", '#','tfour');
+let tfive = new Touche('5', '(', '[','tfive');
+let tsix = new Touche('6', '-', '|','tsix');
+let tseven = new Touche('7', 'è', '`','tseven');
+let teight = new Touche('8', '_', '','teight');
+let tnine = new Touche('9', 'ç', '^','tnine');
+let tzero = new Touche('0', 'à', '@','tzero');
+let tdegre = new Touche('°', ')', ']','tdegre');
+let tplus = new Touche('+', '=', '}','tplus');
+let tremv = new Touche('remv', '', '','tremv');
+let ttab = new Touche('Tab', '', '','ttab');
+let ta = new Touche('A', '', '', 'ta');
+let tz = new Touche('Z', '', '', 'tz');
+let te = new Touche('E', '€', '', 'te');
+let tr = new Touche('R', '', '', 'tr');
+let tt = new Touche('T', '', '', 'tt');
+let ty = new Touche('Y', '', '', 'ty');
+let tu = new Touche('U', '', '', 'tu');
+let ti = new Touche('I', '', '', 'ti');
+let to = new Touche('O', '', '', 'to');
+let tp = new Touche('P', '', '', 'tp');
+let ttrema = new Touche('¨', '^', '', 'ttrema');
+let tdollar = new Touche('£', '$', '', 'tdollar');
+let tarrow = new Touche('>', '<', '', 'tarrow');
+let tmaj = new Touche('Maj', '', '', 'tmaj');
+let tq = new Touche('Q', '', '', 'tq');
+let ts = new Touche('S', '', '', 'ts');
+let td = new Touche('D', '', '', 'td');
+let tf = new Touche('F', '', '', 'tf');
+let tg = new Touche('G', '', '', 'tg');
+let th = new Touche('H', '', '', 'th');
+let tj = new Touche('J', '', '', 'tj');
+let tk = new Touche('K', '', '', 'tk');
+let tl = new Touche('L', '', '', 'tl');
+let tm = new Touche('M', '', '', 'tm');
+let tpercent = new Touche('%', 'ù', '', 'tpercent');
+let tenter = new Touche('Enter', '', '', 'tenter');
+let tshift1 = new Touche('Shift', '', '', 'tshift1');
+let tw = new Touche('W', '', '', 'tw');
+let tx = new Touche('X', '', '', 'tx');
+let tc = new Touche('C', '', '', 'tc');
+let tv = new Touche('V', '', '', 'tv');
+let tb = new Touche('B', '', '', 'tb');
+let tn = new Touche('N', '', '', 'tn');
+let task = new Touche(',', '?', '', 'task');
+let tdot = new Touche(';', '.', '', 'tdot');
+let tslash = new Touche(':', '/', '', 'tslash');
+let texclam = new Touche('!', '§', '', 'texclam');
+let tshift2 = new Touche('Shift', '', '', 'tshift2');
+let tfn = new Touche('fn', '', '', 'tfn');
+let tctrl1 = new Touche('Ctrl', '', '', 'tctrl1');
+let talt = new Touche('Alt', '', '', 'talt');
+let twindows = new Touche('Win', '', '', 'twindows');
+let tspace = new Touche('space', '', '', 'tspace');
+let taltgr = new Touche('Alt', 'gr', '', 'taltgr');
+let tctrl2 = new Touche('Ctrl', '', '', 'tctrl2');
+let tleft = new Touche('left', '', '', 'tleft');
+let tup = new Touche('up', '', '', 'tup');
+let tdown = new Touche('down', '', '', 'tdown');
+let tright = new Touche('right', '', '', 'tright');
 
 let lignes = [[tesc, tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10, tf11, tf12, tdel],
 			[tsquare, tone, ttwo, tthree, tfour, tfive, tsix, tseven, teight, tnine, tzero, tdegre, tplus, tremv],
@@ -117,7 +118,6 @@ console.log(lignes.length);
 for (let i = 0; i < lignes.length; i++) {
 
 	let ul = document.createElement('ul');
-		// ul.innerHTML = lignes;
 		output.append(ul);
 
 	for (let j = 0; j < lignes[i].length; j++) {
@@ -127,13 +127,27 @@ for (let i = 0; i < lignes.length; i++) {
 	
 
 		let li = document.createElement('li');
+		
+		
 
 		if (lignes[i][j].position1) {
+			li.id = lignes[i][j].name;
+
+			if (lignes[i][j].name === 'tspace') {
+			li.style.width = '200px';
+		}
+		else{
+			li.style.width = "40px";
+		}
+
+			// console.log(li.id);
 			li.textContent = lignes[i][j].position1;
 			li.style.textAlign = "left";
-			li.style.display = "inline";
+			li.style.display = "inline-block";
 			li.style.listStyleType = "none";
-		  	li.style.width = "80px";
+		  	
+		  	
+		
 		 	li.style.border = "1px solid black";
 		  	li.style.padding = "10px";
 		  	li.style.margin = "2px";
@@ -160,6 +174,8 @@ for (let i = 0; i < lignes.length; i++) {
 			span.textContent = ' ' + lignes[i][j].position2;
 			span.style.color = 'red';
 		}
+
+		
 
 	}
 

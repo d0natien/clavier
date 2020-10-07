@@ -15,8 +15,8 @@ body{
 
 }
 #clavier{
-	position: relative;
-	top: 30px;
+  position: relative;
+  top: 30px;
   height: 20%;
   margin-top: 20px;
   border: 1px solid grey;
@@ -28,7 +28,8 @@ body{
 }
 
 ul{
-	margin-top: 30px;
+	margin-top: 10px;
 }
+
 
 
