@@ -1,5 +1,5 @@
 
-const output = document.querySelector('ul');
+const output = document.querySelector('#sortie');
 /*const output2 = document.querySelector('#ligne2');
 const output3 = document.querySelector('#ligne3');*/
 
@@ -112,12 +112,19 @@ console.log(lignes.length);
 			this.style.top = "0px";
 	}
 
+	
 
 for (let i = 0; i < lignes.length; i++) {
+
+	let ul = document.createElement('ul');
+		// ul.innerHTML = lignes;
+		output.append(ul);
 
 	for (let j = 0; j < lignes[i].length; j++) {
 		console.log(lignes[i][j]);
 
+
+	
 
 		let li = document.createElement('li');
 
@@ -140,7 +147,7 @@ for (let i = 0; i < lignes.length; i++) {
 		  	li.addEventListener('mousedown', press);
 		  	li.addEventListener('mouseup', unpress);
 		  	li.addEventListener('mouseout', unpress);
-		output.appendChild(li);
+		ul.appendChild(li);
 		}
 
 		if (lignes[i][j].position2) {
