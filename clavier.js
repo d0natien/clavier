@@ -85,7 +85,7 @@ let tfn = new Touche('fn', '', '', 'tfn');
 let tctrl1 = new Touche('Ctrl', '', '', 'tctrl1');
 let talt = new Touche('Alt', '', '', 'talt');
 let twindows = new Touche('Win', '', '', 'twindows');
-let tspace = new Touche('space', '', '', 'tspace');
+let tspace = new Touche(' ', '', '', 'tspace');
 let taltgr = new Touche('Alt', 'g', '', 'taltgr');
 let tctrl2 = new Touche('Ctrl', '', '', 'tctrl2');
 let tleft = new Touche('left', '', '', 'tleft');
@@ -129,47 +129,49 @@ for (let i = 0; i < lignes.length; i++) {
 		let li = document.createElement('li');
 		ul.appendChild(li);
 		
-		
 
-		if (lignes[i][j].position1) {
 			li.id = lignes[i][j].name;
 
-			if (lignes[i][j].name === 'tspace') {
-			li.style.width = '200px';
-		}
-		else{
-			li.style.width = "40px";
-		}
+			li.textContent = lignes[i][j].position1;
+			li.style.display = "inline-block";
+			li.style.listStyleType = "none";
+		  	
 
 	if (lignes[i][j].name === 'tesc' || lignes[i][j].name === 'tf1' || lignes[i][j].name === 'tf2' || lignes[i][j].name === 'tf3' 
 		|| lignes[i][j].name === 'tf4' || lignes[i][j].name === 'tf5' || lignes[i][j].name === 'tf6' || lignes[i][j].name === 'tf7'
 		|| lignes[i][j].name === 'tf8' || lignes[i][j].name === 'tf9' || lignes[i][j].name === 'tf10' || lignes[i][j].name === 'tf11'
 		|| lignes[i][j].name === 'tf12' || lignes[i][j].name === 'tdel') {
-		li.style.height = '5px';
+		li.style.height = '15px';
+		li.style.width = '45px';
 		li.style.textAlign = 'left';
+		li.style.fontSize = '12px';
+		li.style.paddingTop = '8px';
+		li.style.paddingLeft = '8px';
+	}else if(lignes[i][j].name === 'tshift1' || lignes[i][j].name === 'tshift2'){
+		li.style.width = '107px';
+		li.style.height = '26px';
+		li.style.paddingTop = '0px';
+	}else if( lignes[i][j].name === 'tmaj' || lignes[i][j].name === 'tenter') {
+		li.style.width = '83px';
+		li.style.height = '26px';
+	}else if ( lignes[i][j].name === 'ttab' || lignes[i][j].name === 'tremv') {
+		li.style.width = '68px';
+		li.style.height = '26px';
+	}else if (lignes[i][j].name === 'tspace') {
+		li.style.width = '223px';
+		li.style.height = '26px';
+		li.style.verticalAlign = 'bottom';
 	}else{
-		li.style.height = '20px';
+		li.style.height = '26px';
+		li.style.width = '43px'
 		li.style.textAlign = 'center';
 	}
 
-	if (lignes[0][j] === 'tsquare') {
-		li.style.padding = '0px';
-	}else{
-		li.style.padding = '10px';
-	}
-
-			// console.log(li.id);
-			li.textContent = lignes[i][j].position1;
-			// li.style.textAlign = "left";
-			li.style.display = "inline-block";
-			li.style.listStyleType = "none";
-		  	
-		  	
 		
 		 	li.style.border = "1px solid black";
-		  	// li.style.padding = "10px";
-		  	li.style.margin = "2px";
-		  	li.style.textAlign = "center";
+		  	li.style.padding = "3px";
+		  	li.style.margin = "1px";
+		  	// li.style.textAlign = "center";
 		  	li.style.fontWeight = "bold";
 		  	li.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #fff";
 		  	li.style.borderRadius = "5px";
@@ -179,7 +181,7 @@ for (let i = 0; i < lignes.length; i++) {
 		  	li.addEventListener('mousedown', press);
 		  	li.addEventListener('mouseup', unpress);
 		  	li.addEventListener('mouseout', unpress);
-		}
+		
 
 		if (lignes[i][j].position2) {
 
@@ -192,8 +194,10 @@ for (let i = 0; i < lignes.length; i++) {
 			span.style.color = 'red';
 		}
 
-		
-
 	}
-
 }
+
+	
+
+
+
