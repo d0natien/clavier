@@ -103,13 +103,13 @@ let lignes = [[tesc, tf1, tf2, tf3, tf4, tf5, tf6, tf7, tf8, tf9, tf10, tf11, tf
 console.log(lignes.length);
 
 	function press(){
-			this.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 1px 0px 1px #fff";
+			this.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 1px 0px 1px #bfb6b9";
 			this.style.position = "relative";
 			this.style.top = "5px";
 	}
 
 	function unpress(){
-			this.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #fff";
+			this.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #bfb6b9";
 			this.style.top = "0px";
 	}
 
@@ -168,15 +168,15 @@ for (let i = 0; i < lignes.length; i++) {
 	}
 
 		
-		 	li.style.border = "1px solid black";
+		 	li.style.border = "1px solid #584e4d";
 		  	li.style.padding = "3px";
 		  	li.style.margin = "1px";
 		  	// li.style.textAlign = "center";
 		  	li.style.fontWeight = "bold";
-		  	li.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #fff";
+		  	li.style.boxShadow = "inset 0px 1px 0px #aaa, 0px 7px 0px 1px #bfb6b9";
 		  	li.style.borderRadius = "5px";
-		  	li.style.color = "#808080";
-		  	li.style.backgroundColor = "#fff";
+		  	li.style.color = "	#584e4d";
+		  	li.style.backgroundColor = "#bfb6b9";
 
 		  	li.addEventListener('mousedown', press);
 		  	li.addEventListener('mouseup', unpress);
